@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Artist{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true)
@@ -32,6 +32,7 @@ public class Artist{
     private String location;
 
     @Column(name = "facebook")
+    @NotNull
     private String facebookLink;
 
     @Column(name = "soundcloud")
@@ -41,7 +42,6 @@ public class Artist{
     private String instagramLink;
 
     @Column
-    @NotNull
     @ElementCollection
     private List<String> photosLink;
 
